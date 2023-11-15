@@ -9,7 +9,7 @@ jobs:
           version: 19.03.13
       - run:
           name: Test SSH connection
-          command: ssh -T TongSii@github.com # Replace with your Git server domain
+          command: ssh -T git@github.com # Replace with your Git server domain
 
       - run:
           name: Build Docker Image
