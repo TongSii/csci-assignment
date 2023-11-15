@@ -8,6 +8,10 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - run:
+          name: Test SSH connection
+          command: ssh -T TongSii@github.com # Replace with your Git server domain
+
+      - run:
           name: Build Docker Image
           command: |
             docker build -t $DOCKERHUB_tongsi/myapp:${CIRCLE_SHA1} .
