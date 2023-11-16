@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Authenticate with Docker Hub
           command: |
-            echo "$dockerhub_St!980730" | docker login --dockerhub_tongsi $dockerhub_tongsi --password-stdin
+            echo "$dockerhub_St!980730" | docker login --tongsi $dockerhub_tongsi --password-stdin
       - run:
           name: Push Docker Image to Docker Hub
           command: |
