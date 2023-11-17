@@ -6,7 +6,7 @@ Created on Thu Sep 14 11:56:24 2023
 @author: tsi2
 """
 
-from scipy import sparse
+
 import scipy.sparse as sps
 from scipy.sparse import random
 from scipy.sparse import coo_matrix
@@ -46,7 +46,8 @@ class SparseMatrix:
 
     def get_shape(self): #Returns the value at (row, col).
         return self.rows, self.cols
-        
+
+##Multiplies the sparse matrix with a given user_vector (describes the user preferences) to produce recommendations
     def matrix_vector_multiply(self, user_vector):
         if len(user_vector) != self.cols:
             raise ValueError("User vector length must match the number of columns in the matrix")
@@ -60,7 +61,8 @@ class SparseMatrix:
             result[row] += value * user_vector[col]
 
         return result #return the result.
-        
+    
+    #Adds another sparse matrix, simulating the addition of a new movie to the service.
     def matrix_addition(self, other_matrix):
         if self.get_shape() != other_matrix.get_shape():
             raise ValueError("Matrix dimensions must match for addition")

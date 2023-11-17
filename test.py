@@ -10,7 +10,6 @@ from sparse_recommender import SparseMatrix
 
 
 
-
 def test_add_value():
     sparse_matrix = SparseMatrix(3, 3)
     
