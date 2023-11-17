@@ -36,7 +36,7 @@ jobs:
           version: 19.03.13
       - run:
           name: Echo Docker Image Name
-          command:|
+          command:
             echo "Docker Image Name:| $tongsi/myapp:latest"
       - run:
           name: Build Docker Image
