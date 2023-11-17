@@ -1,11 +1,10 @@
 version: 2.1
-
 jobs:
   run_tests:
     docker:
       - image: cimg/python:3.8
     steps:
-      
+      - checkout
       - run:
           name: Install Dependencies
           command: 
@@ -28,7 +27,7 @@ jobs:
           name: Run PyTest
           command: 
             pytest test.py
-      - checkout
+      
       - setup_remote_docker:
           version: 19.03.13
 
