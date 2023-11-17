@@ -11,9 +11,12 @@ jobs:
           command: |
             pip install numpy pytest
       - run:
-          name: Install Dependencies
+          name: Install SciPy
+          command: pip install scipy
+      - run:
+          name: Run pythonfile
           command: |
-            pip install scipy
+            python sparse_recommender.py
       - run:
           name: Run PyTest
           command: |
