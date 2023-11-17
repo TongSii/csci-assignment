@@ -21,6 +21,9 @@ jobs:
           name: Run PyTest
           command: |
             pytest test.py
+      - run:
+          name: List files
+          command: ls -l
 
   build_and_push:
     docker:
