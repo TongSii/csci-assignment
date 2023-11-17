@@ -35,6 +35,9 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - run:
+          name: Echo Docker Image Name
+          command: echo "Docker Image Name: $tongsi/myapp:latest"
+      - run:
           name: Build Docker Image
           command: |
             docker build -t $tongsi/myapp:latest  .
