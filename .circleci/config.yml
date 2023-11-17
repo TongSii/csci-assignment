@@ -42,7 +42,7 @@ jobs:
           name: Build Docker Image
           command: |
             
-            docker build -t yourusername/myapp:latest ./app
+            docker build -t yourusername/myapp:latest .
       - run:
           name: Authenticate with Docker Hub
           command: |
