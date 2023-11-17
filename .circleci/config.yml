@@ -17,7 +17,7 @@ jobs:
           command: ls -l
       - run:
           name: Run pythonfile
-          command: 
+          command:
             python sparse_recommender.py
       - run:
           name: Run PyTest
@@ -36,7 +36,8 @@ jobs:
           version: 19.03.13
       - run:
           name: Echo Docker Image Name
-          command: echo "Docker Image Name: $tongsi/myapp:latest"
+          command:|
+            echo "Docker Image Name: $tongsi/myapp:latest"
       - run:
           name: Build Docker Image
           command: |
