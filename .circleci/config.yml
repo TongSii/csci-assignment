@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $tongsi/myapp:${CIRCLE_SHA1} .
+            docker build -t $tongsi/myapp:latest  .
       - run:
           name: Authenticate with Docker Hub
           command: |
@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tongsi/myapp:${CIRCLE_SHA1}
+            docker push $tongsi/myapp:$latest 
 
 workflows:
   version: 2
