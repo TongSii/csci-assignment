@@ -20,7 +20,7 @@ class SparseMatrix:
         self.row_indices = []  
         self.col_indices = []  
 
-    def add_value(self, row, col, value):#Sets the value at (row, col) to value
+    def add_element(self, row, col, value):#Sets the value at (row, col) to value
         if 0 <= row < self.rows and 0 <= col < self.cols:
             self.data.append(value)
             self.row_indices.append(row)
