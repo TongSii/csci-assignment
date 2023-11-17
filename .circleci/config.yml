@@ -10,6 +10,7 @@ jobs:
           name: Install Dependencies
           command: |
             pip install numpy pytest
+            pip install scipy
       - run:
           name: Run PyTest
           command: |
