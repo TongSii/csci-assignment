@@ -1,5 +1,20 @@
 version: 2.1
+
 jobs:
+  run_tests:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: |
+            pip install numpy pytest
+      - run:
+          name: Run PyTest
+          command: |
+            pytest test.py
+
   build_and_push:
     docker:
       - image: cimg/python:3.8
@@ -7,25 +22,27 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 19.03.13
-      
-
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $tongsi/my-python-app1:${CIRCLE_SHA1} .
+            docker build -t $tongsi/myapp:${CIRCLE_SHA1} .
       - run:
           name: Authenticate with Docker Hub
           command: |
-            echo "$St!980730" | docker login --tongsi $tongsi --password-stdin
+            echo "St!980730" | docker login --tongsi $tongsi --password-stdin
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tongsi/my-python-app:${CIRCLE_SHA1} 
+            docker push $tongsi/myapp:${CIRCLE_SHA1}
+
 workflows:
   version: 2
   build_and_deploy:
     jobs:
+      - run_tests
       - build_and_push:
-        filters:
-          branches:
-            only:main
+          requires:
+            - run_tests
+          filters:
+            branches:
+              only: main
