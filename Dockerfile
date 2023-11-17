@@ -1,8 +1,8 @@
 # Use the official Python image from Docker Hub as the base image
 FROM python:3.8-slim
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/test
 # Copy
-COPY app.py .
+COPY test.py .
 # run
-CMD [ "python", "./app.py" ]
+CMD [ "python", "./test.py" ]
