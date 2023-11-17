@@ -6,7 +6,7 @@ Created on Thu Sep 14 11:56:24 2023
 @author: tsi2
 """
 
-
+from scipy import sparse
 import scipy.sparse as sps
 from scipy.sparse import random
 from scipy.sparse import coo_matrix
