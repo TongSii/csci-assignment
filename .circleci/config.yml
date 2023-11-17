@@ -7,15 +7,11 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: 
-            pip install numpy
+          command: |
+            pip install numpy pytest
       - run:
           name: Install SciPy
           command: pip install scipy
-       - run:
-          name: Install pytest
-          command: 
-            pip install pytest 
       - run:
           name: List files
           command: ls -l
