@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $tongsi/myapp:latest .
+            docker build -t $tongsi/myapp:$latest .
       - run:
           name: Authenticate with Docker Hub
           command: |
