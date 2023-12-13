@@ -42,7 +42,7 @@ jobs:
           name: Build Docker Image
           command: |
             
-            docker build -t yourusername/myapp:latest .
+            docker build -t tongsi/myapp:latest .
       - run:
           name: Authenticate with Docker Hub
           command: |
@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tong.si@slu.edu/myapp:$latest 
+            docker push $tongsi/myapp:$latest 
 
 workflows:
   version: 2
