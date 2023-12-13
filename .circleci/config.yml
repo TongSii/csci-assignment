@@ -41,11 +41,11 @@ jobs:
       - run:
           name: Authenticate with Docker Hub
           command: |
-            echo "St!980730" | docker login --username $tongsi --password-stdin
+            echo "DOCKERHB_PASS" | docker login --username $DOCKERHUB_USERNAME --password-stdin
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tongsi/myapp:v1.0 
+            docker push $DOCKERHUB_USERNAME/myapp:v1.0 
 
 workflows:
   version: 2
