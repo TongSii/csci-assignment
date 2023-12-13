@@ -42,11 +42,11 @@ jobs:
           name: Build Docker Image
           command: |
             
-            docker build -t tongsi/myapp:latest .
+            docker build -t $tongsi/myapp:latest .
       - run:
           name: Authenticate with Docker Hub
           command: |
-            echo "DOCKERHUB_PASS" | docker login --username $DOCKERHUB_USERNAME --password-stdin
+            echo "St!980730" | docker login --username $tongsi --password-stdin
       - run:
           name: Push Docker Image to Docker Hub
           command: |
