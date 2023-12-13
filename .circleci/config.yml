@@ -37,11 +37,11 @@ jobs:
       - run:
           name: Echo Docker Image Name
           command:
-            echo "Docker Image Name:| $tongsi/myapp:$latest"
+            echo "Docker Image Name:| $tongsi/myapp:latest"
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $tongsi/myapp: $latest .
+            docker build -t $tongsi/myapp:latest .
       - run:
           name: Authenticate with Docker Hub
           command: |
@@ -49,7 +49,7 @@ jobs:
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tongsi/myapp:$latest 
+            docker push $tongsi/myapp:latest 
 
 workflows:
   version: 2
