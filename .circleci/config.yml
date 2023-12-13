@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Authenticate with Docker Hub
           command: |
-            echo "St!980730" | docker login --username $tong.si@slu.edu --password-stdin
+            echo "St!980730" | docker login --username $tong.si@slu.edu --password St!980730
       - run:
           name: Push Docker Image to Docker Hub
           command: |
