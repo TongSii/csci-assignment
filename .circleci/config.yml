@@ -35,13 +35,9 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - run:
-          name: Echo Docker Image Name
-          command:
-            echo "Docker Image Name:| $tongsi/myapp:v1 "
-      - run:
           name: Build Docker Image
           command: |
-            docker build -t $tongsi/myapp:v1 .
+            docker build -t $tongsi/myapp:v1.0 .
       - run:
           name: Authenticate with Docker Hub
           command: |
