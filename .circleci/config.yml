@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tongsi/myapp:v1 
+            docker push $tongsi/myapp:v1.0 
 
 workflows:
   version: 2
