@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $tongsi/myapp:v1.0 .
+            docker build -t $tongsi/myapp1:v1.0 .
       - run:
           name: Authenticate with Docker Hub
           command: |
@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $tongsi/myapp:v1.0 
+            docker push $tongsi/myapp1:v1.0 
 
 workflows:
   version: 2
